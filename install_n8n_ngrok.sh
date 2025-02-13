@@ -52,16 +52,17 @@ NGROK_TOKEN="2sx36nSXbvo2J4gCU5rXwsYsvWW_3uuem4dszSAhrW2ZAkAPU"
 echo "Thêm token vào ngrok..."
 ngrok config add-authtoken $NGROK_TOKEN
 
-# Chạy ngrok để mở cổng HTTP
-echo "Chạy ngrok..."
-ngrok http --url=wrongly-tolerant-humpback.ngrok-free.app 5678 &
+
 
 # Chạy container Docker cho n8n
 echo "Chạy container Docker cho n8n..."
 sudo docker run -d --name n8n -p 5678:5678 \
-    -e N8N_EDITOR_BASE_URL=https://fb81-13-76-182-130.ngrok-free.app \
+    -e N8N_EDITOR_BASE_URL=wrongly-tolerant-humpback.ngrok-free.app \
     -e N8N_SECURE_COOKIE=false \
     -e GENERIC_TIMEZONE=Asia/Ho_Chi_Minh \
     n8nio/n8n
+    
+# Chạy ngrok để mở cổng HTTP
+echo "Chạy ngrok..."
+ngrok http --url=wrongly-tolerant-humpback.ngrok-free.app 5678
 
-echo "Cài đặt hoàn tất!"
