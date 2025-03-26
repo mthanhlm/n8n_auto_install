@@ -66,6 +66,3 @@ sudo docker run -d --name n8n -p 5678:5678 \
 # Chạy ngrok để mở cổng HTTP
 echo "Chạy ngrok..."
 ngrok http --url=wrongly-tolerant-humpback.ngrok-free.app 5678 > /dev/null &
-export EXTERNAL_IP="$(curl http://localhost:4040/api/tunnels | jq ".tunnels[0].public_url")"
-echo Got Ngrok URL = $EXTERNAL_IP
-echo "--------- 🔴 Finish Ngrok setup -----------"
