@@ -46,7 +46,7 @@ curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/tru
 echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
 sudo apt update
 sudo apt install -y ngrok
-sudo apt install -y jq
+sudo apt-get install screen
 
 # Cấu hình ngrok với token cá nhân (hãy thay thế bằng token thật của bạn)
 NGROK_TOKEN="2sx36nSXbvo2J4gCU5rXwsYsvWW_3uuem4dszSAhrW2ZAkAPU"
@@ -65,4 +65,4 @@ sudo docker run -d --name n8n -p 5678:5678 \
     
 # Chạy ngrok để mở cổng HTTP
 echo "Chạy ngrok..."
-ngrok http --url=wrongly-tolerant-humpback.ngrok-free.app 5678 > /dev/null &
+
