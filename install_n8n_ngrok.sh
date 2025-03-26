@@ -64,5 +64,4 @@ sudo docker run -d --name n8n -p 5678:5678 \
     
 # Chạy ngrok để mở cổng HTTP
 echo "Chạy ngrok..."
-ngrok http --url=wrongly-tolerant-humpback.ngrok-free.app -log=stdout 5678 > /dev/null &
-
+ngrok http --url=wrongly-tolerant-humpback.ngrok-free.app 5678 > /dev/null &
